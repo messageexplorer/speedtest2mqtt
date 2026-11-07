@@ -6,4 +6,4 @@ declare | grep -Ev 'BASHOPTS|BASH_VERSINFO|EUID|PPID|SHELLOPTS|UID' > /var/tmp/c
 sed -i "/schedule/c\    schedule: \"${CRON}\"" /home/foo/crontab.yml
 
 echo "starting cron (${CRON})"
-/yacronenv/bin/yacron -c /home/foo/crontab.yml
+exec /yacronenv/bin/yacron -c /home/foo/crontab.yml
